@@ -35,6 +35,11 @@
         <input type="password" name="password" id="password" placeholder="Enter a Password">
         <br>
         <input type="submit" value="Create my account" name="submit" id="submit">
+        <div id="messages">
+         {% for message in messages %}
+         <h2>{{message}}</h2>
+         {% endfor %}
+         </div>
     </form>
     
 </body>

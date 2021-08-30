@@ -25,7 +25,13 @@
         <label >Password:</label><br>
         <input type="password" name="password" id="password" placeholder="Enter Your Password">
         <input type="submit" value="Login" name="submit" id="submit">
+        <div id="messages">
+         {% for message in messages %}
+         <h2>{{message}}</h2>
+         {% endfor %}
+         </div>
     </form>
+    
 </head>
 <body>
     

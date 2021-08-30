@@ -18,6 +18,7 @@
 <a href="/">HOME</a>
 <a href="/prediction/yieldprediction">YIELD PREDICTOR</a>
 <a href="/prediction/cropprediction">CROP PREDICTOR</a>
+<a href="/accounts/logout">LOGOUT</a>
 </div>
 
 <div class="container">
@@ -36,18 +37,13 @@
    <li><h3>District : {{district}}</h3></li>
    <li><h3>Season : {{season}}</h3></li>
    <li><h3>Crop : {{crop}}</h3></li>
-   <li><h3>Yield/Area : {{yieldperarea}}</h3></li>
-   <li><h3>Total Yield : {{yield}}</h3></li>
+   <li><h3>Yield/Area : <mark>{{yieldperarea}}</mark> Quintal/ Hectare</h3></li>
+   <li><h3>Total Yield : <mark>{{yield}}</mark>Quintal</h3></li>
 </ul>
 </div>
 
 </div>
 
-<div id="messages">
-{% for message in messages %}
-{{message}}
-{% endfor %}
-</div>
 </body>
 </html>
 

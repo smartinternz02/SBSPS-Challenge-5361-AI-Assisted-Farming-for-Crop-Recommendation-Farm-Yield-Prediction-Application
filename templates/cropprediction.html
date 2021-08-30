@@ -23,18 +23,19 @@
       <a href="/">HOME</a>
       <a href="/prediction/cropprediction">CROP PREDICTOR</a>
       <a href="/prediction/yieldprediction">YIELD PREDICTOR</a>
+      <a href="/accounts/logout">LOGOUT</a>
     </div>
     <h2>Let's predict the crop best suited for your land</h2>
 
 <form action="" method='post'>
     {% csrf_token %}
-    Nitrogen:<input type="number" min="0" max="140" id="N" name="N" placeholder="Enter the amount of Nitrogen">
-    Phosphorous:<input type="number" min="5" max="145" id="P" name="P" placeholder="Enter the amount of Phosphorous">
-    Potassium:<input type="number" min="5" max="205" id="K" name="K" placeholder="Enter the amount of Potassium">
-    Temperature:<input type="number" min="7" max="45" id="temperature" name="temperature" placeholder="Enter the amount of Rainfall">
-    Humidity:<input type="number" min="14" max="100" id="humidity" name="humidity" placeholder="Enter the humidity">
-    pH:<input type="number" min="3" max="10" id="ph" name="ph" placeholder="Enter the level of pH">
-    Rainfall:<input type="number" min="20" max="300" id="rainfall" name="rainfall" placeholder="Enter the amount of Rainfall">
+    Nitrogen:<input type="number" min="0" max="140" id="N" name="N" placeholder="Enter the ratio of Nitrogen">
+    Phosphorous:<input type="number" min="5" max="145" id="P" name="P" placeholder="Enter the ratio of Phosphorous">
+    Potassium:<input type="number" min="5" max="205" id="K" name="K" placeholder="Enter the ratio of Potassium">
+    Temperature:<input type="number" min="7" max="45" id="temperature" name="temperature" placeholder="Enter the temperature in degree Celsius">
+    Humidity:<input type="number" min="14" max="100" id="humidity" name="humidity" placeholder="Enter the relative humidity in %">
+    pH:<input type="number" min="3" max="10" id="ph" name="ph" placeholder="Enter the ph value of the soil">
+    Rainfall:<input type="number" min="20" max="300" id="rainfall" name="rainfall" placeholder="Enter the amount of rainfall in mm">
     
     <input type="submit" value="PREDICT">
     <a href="/prediction/cropprediction">

@@ -17,12 +17,13 @@
 <div id="navbar">
    <a href="/prediction/yieldprediction">YIELD PREDICTOR</a>
    <a href="/prediction/cropprediction">CROP PREDICTOR</a>
+   <a href="/accounts/logout">LOGOUT</a>
 </div>
 
 <div class="predictcontainer">
 <div class="textcontainer">
 <h1>Predicted Result</h1>
-<h2>Crop best suited for your land is <br>{{croppredict}}!!!</h2>
+<h2>Crop best suited for your land is <br><mark>{{croppredict}}</mark></h2>
 <a href="/">
    <input type="button" value="Return to Home">
    </a>
@@ -32,12 +33,6 @@
    <img src="{%static image %}" alt="{{croppredict}}">
 </div>
 
-
-<div id="messages">
-{% for message in messages %}
-{{message}}
-{% endfor %}
-</div>
 </body>
 </html>
 

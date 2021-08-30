@@ -36,6 +36,7 @@
   <a href="/">HOME</a>
   <a href="/prediction/cropprediction">CROP PREDICTOR</a>
   <a href="/prediction/yieldprediction">YIELD PREDICTOR</a>
+  <a href="/accounts/logout">LOGOUT</a>
 </div>
  
  
@@ -43,7 +44,7 @@
 <form action="" method='post'>
 {% csrf_token %}
 
-<label for="State"><strong>Choose a State:</strong></label>
+<label for="State"><strong>State:</strong></label>
 <select class="ui search dropdown" name="state" id="states" onchange='if(this.value != 0) { this.form.submit(); }'>
   <option selection='selected' value={{state}}>{{state}}</option>
   {% for value in states %}
@@ -52,7 +53,7 @@
 </select>
 <br>
 
-<label for="District"><strong>Choose a District:</strong></label>
+<label for="District"><strong>District:</strong></label>
 <select class="ui search dropdown" name="district" id="districts" onchange='if(this.value != 0) { this.form.submit(); }'>
   <option selection='selected' value={{district}}>{{district}}</option>
   {% for value in districts %}
@@ -61,7 +62,7 @@
 </select>
 <br>
 
-<label for="Season"><strong>Choose a Season</strong>:</label>
+<label for="Season"><strong>Season</strong>:</label>
 <select class="ui search dropdown" name="season" id="Seasons" onchange='if(this.value != 0) { this.form.submit(); }'>
   <option selection='selected' value={{season}}>{{season}}</option>
   {% for value in seasons %}
@@ -70,7 +71,7 @@
 </select>
 <br>
 
-<label for="crop"><strong>Choose a crop:</strong></label><br>
+<label for="crop"><strong>Crop:</strong></label><br>
 <select class="ui search dropdown" name="crop" id="crops" onchange='if(this.value != 0) { this.form.submit(); }'>
   <option selection='selected' value={{crop}}>{{crop}}</option>
   {% for value in crops %}
@@ -78,7 +79,7 @@
   {% endfor %}
 </select>
 <br>
-<label for="area"><strong>Area:</strong></label>
+<label for="area"><strong>Area(in Hectare):</strong></label>
 <input type="number" name="area" id="area" min="1" max="10000000" placeholder="Enter the Area of the land">
 <!--strong>Area:</strong><input type="number" min="1" max="10000000" id="area" name="area"-->
   
