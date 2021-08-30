@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | LOGIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href='{% static 'styles/login.css' %}?{% now "U" %}'>
+    <div id="navbar">
+      
+      <a href="/">HOME</a>
+      <a href="/accounts/register">REGISTER</a>
+   </div>
+    <h1>Login to your Account here...</h1>
+    <form id="register" method="post" class="loginform">
+        {% csrf_token %}
+        
+        <label >Username:</label><br>
+        <input type="text" name="username" id="username" placeholder="Enter your Username">
+        <br>
+        <label >Password:</label><br>
+        <input type="password" name="password" id="password" placeholder="Enter Your Password">
+        <input type="submit" value="Login" name="submit" id="submit">
+    </form>
+</head>
+<body>
+    
+</body>
+</html>

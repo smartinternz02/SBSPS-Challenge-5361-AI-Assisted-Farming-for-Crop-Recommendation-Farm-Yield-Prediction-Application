@@ -1,0 +1,56 @@
+{% load static %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>Result | Crop Predictor</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href='{% static 'styles/cropresult.css' %}?{% now "U" %}'>
+</head>
+<body>
+<div id="navbar">
+   <a href="/prediction/yieldprediction">YIELD PREDICTOR</a>
+   <a href="/prediction/cropprediction">CROP PREDICTOR</a>
+</div>
+
+<div class="predictcontainer">
+<div class="textcontainer">
+<h1>Predicted Result</h1>
+<h2>Crop best suited for your land is <br>{{croppredict}}!!!</h2>
+<a href="/">
+   <input type="button" value="Return to Home">
+   </a>
+</div>
+</div>
+<div class="imgcontainer">
+   <img src="{%static image %}" alt="{{croppredict}}">
+</div>
+
+
+<div id="messages">
+{% for message in messages %}
+{{message}}
+{% endfor %}
+</div>
+</body>
+</html>
+
+{% else %}
+
+<head>
+  <meta http-equiv="refresh" content="1; URL=/accounts/login" />
+</head>
+<body>
+  <p>If you are not redirected in three seconds, <a href="/accounts/login">click here</a>.</p>
+</body>
+
+
+
+
+{% endif %}

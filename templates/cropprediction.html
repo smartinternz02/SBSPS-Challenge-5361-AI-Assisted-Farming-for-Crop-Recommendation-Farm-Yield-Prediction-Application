@@ -1,0 +1,63 @@
+{% load static %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CROP PREDICTOR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href='{% static 'styles/cropprediction.css' %}?{% now "U" %}'>
+
+</head>
+
+<body bgcolor="cyan">
+  <body>
+    <div id="navbar">
+      <a href="/">HOME</a>
+      <a href="/prediction/cropprediction">CROP PREDICTOR</a>
+      <a href="/prediction/yieldprediction">YIELD PREDICTOR</a>
+    </div>
+    <h2>Let's predict the crop best suited for your land</h2>
+
+<form action="" method='post'>
+    {% csrf_token %}
+    Nitrogen:<input type="number" min="0" max="140" id="N" name="N" placeholder="Enter the amount of Nitrogen">
+    Phosphorous:<input type="number" min="5" max="145" id="P" name="P" placeholder="Enter the amount of Phosphorous">
+    Potassium:<input type="number" min="5" max="205" id="K" name="K" placeholder="Enter the amount of Potassium">
+    Temperature:<input type="number" min="7" max="45" id="temperature" name="temperature" placeholder="Enter the amount of Rainfall">
+    Humidity:<input type="number" min="14" max="100" id="humidity" name="humidity" placeholder="Enter the humidity">
+    pH:<input type="number" min="3" max="10" id="ph" name="ph" placeholder="Enter the level of pH">
+    Rainfall:<input type="number" min="20" max="300" id="rainfall" name="rainfall" placeholder="Enter the amount of Rainfall">
+    
+    <input type="submit" value="PREDICT">
+    <a href="/prediction/cropprediction">
+      <input type="button" value="REFRESH" />
+    </a>
+</form>
+
+
+
+
+
+</body>
+</html>
+
+{% else %}
+
+<head>
+  <meta http-equiv="refresh" content="1; URL=/accounts/login" />
+</head>
+<body>
+  <p>If you are not redirected in three seconds, <a href="/accounts/login">click here</a>.</p>
+</body>
+
+
+
+{% endif %}

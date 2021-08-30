@@ -1,0 +1,159 @@
+html{
+  height: 100%;
+}
+
+body{
+    background-image: linear-gradient(rgba(34,38,41,0.8),rgba(34,38,41,0.8)),url('../images/agriculture2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  #loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  form{
+    max-width: 350px;
+    margin: auto;
+    
+      border-radius: 5px;
+      padding-top:8px;
+      padding-bottom:5px;
+      padding-left:20px;
+      padding-right: 20px;
+      background:rgba(255,255,255,0.8);
+      box-shadow: 0 15px 15px rgba(0,0,0,0.6);
+  }
+  h2{
+    padding-top:4%;
+    text-align:center;
+    color:white;
+  }
+  select{
+    padding-bottom:15px;
+    width:300px;
+    border-radius: 4px;
+    padding-left:15px;
+    
+  }
+  
+  input[type=text], select{
+      width:100%;
+      padding: 12px 20px;
+      margin:8px 0;
+      display:inline-block;
+      border:1px solid black;
+      border-radius: 4px;
+      box-sizing: border-box;
+    font-size: medium;
+    padding-top:15px;
+    background-color:#474b4f;
+    color:rgba(255,255,255,0.8);
+  }
+  input[type=number],select{
+    width:100%;
+    background-color: #474b4f;
+    border:1px solid black;
+    border-radius: 4px;
+    color:rgba(255,255,255,0.8);
+  }
+  input[type=submit]{
+    width:35%;
+    background:#11a7bb;
+    color:white;
+    margin:8px 0;
+    border:none;
+    padding:14px 0;
+    border-radius: 10px;
+    cursor:pointer;
+    align-content:center;
+    margin-left:10%;
+    font-weight: bolder;
+  }
+  input[type=submit]:hover{
+      background: black;
+  }
+  input[type=button]{
+    width:35%;
+    background:#11a7bb;
+    color:white;
+    margin:8px 0;
+    border:none;
+    padding:14px 0;
+    border-radius:10px;
+    cursor:pointer;
+    align-content:center;
+    font-size:12px;
+    margin-left:10%;
+    font-weight: bolder;
+  }
+  input[type=button]:hover{
+    background:black;
+    color:white;
+  }
+  label{
+    font-size:16px;
+  }
+  
+  #navbar {
+    position:fixed;
+    width:100%;
+    margin-top:0;
+    margin-left:0;
+    padding-top:20px;
+    padding-bottom:20px;
+    text-decoration: none;
+    left:0;
+    top:0;
+  }
+  #navbar a{
+    padding-left:30px;
+    padding-right: 30px;
+    text-decoration: none;
+    font-size:18px;
+    text-align:center;
+    color:white;
+    margin-left: 20px;
+    font-weight: bolder;
+  }
+  #navbar a:hover{
+    padding-top:8px;
+    padding-bottom:8px;
+    background-color:#6abe06;
+    color:white;
+    border-radius:10px;
+  }
+  input[type=number]{
+    width:100%;
+    padding: 12px 20px;
+    margin:8px 0;
+    display:inline-block;
+    border:1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: medium;
+    padding-top:15px;
+}
+::placeholder{
+  color:rgba(255,255,255,0.8);
+}

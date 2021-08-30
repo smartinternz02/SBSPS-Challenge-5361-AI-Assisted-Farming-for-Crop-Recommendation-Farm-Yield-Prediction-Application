@@ -1,0 +1,107 @@
+{% load static %}
+{% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+    <script type="text/javascript" >
+
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader").style.visibility = "visible";
+        } else {
+            document.querySelector("#loader").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+  </script>
+  
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>Yield Predictor</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href='{% static 'styles/yieldprediction.css' %}?{% now "U" %}'>
+</head>
+
+
+<body>
+<div id="loader" class="center"></div>
+
+<div id="navbar">
+  <a href="/">HOME</a>
+  <a href="/prediction/cropprediction">CROP PREDICTOR</a>
+  <a href="/prediction/yieldprediction">YIELD PREDICTOR</a>
+</div>
+ 
+ 
+<h2>Let's predict the yield of your Land!</h2>
+<form action="" method='post'>
+{% csrf_token %}
+
+<label for="State"><strong>Choose a State:</strong></label>
+<select class="ui search dropdown" name="state" id="states" onchange='if(this.value != 0) { this.form.submit(); }'>
+  <option selection='selected' value={{state}}>{{state}}</option>
+  {% for value in states %}
+  <option value={{value}}>{{value}}</option>
+  {% endfor %}
+</select>
+<br>
+
+<label for="District"><strong>Choose a District:</strong></label>
+<select class="ui search dropdown" name="district" id="districts" onchange='if(this.value != 0) { this.form.submit(); }'>
+  <option selection='selected' value={{district}}>{{district}}</option>
+  {% for value in districts %}
+  <option value={{value}}>{{value}}</option>
+  {% endfor %}
+</select>
+<br>
+
+<label for="Season"><strong>Choose a Season</strong>:</label>
+<select class="ui search dropdown" name="season" id="Seasons" onchange='if(this.value != 0) { this.form.submit(); }'>
+  <option selection='selected' value={{season}}>{{season}}</option>
+  {% for value in seasons %}
+  <option value={{value}}>{{value}}</option>
+  {% endfor %}
+</select>
+<br>
+
+<label for="crop"><strong>Choose a crop:</strong></label><br>
+<select class="ui search dropdown" name="crop" id="crops" onchange='if(this.value != 0) { this.form.submit(); }'>
+  <option selection='selected' value={{crop}}>{{crop}}</option>
+  {% for value in crops %}
+  <option value={{value}}>{{value}}</option>
+  {% endfor %}
+</select>
+<br>
+<label for="area"><strong>Area:</strong></label>
+<input type="number" name="area" id="area" min="1" max="10000000" placeholder="Enter the Area of the land">
+<!--strong>Area:</strong><input type="number" min="1" max="10000000" id="area" name="area"-->
+  
+<input type="submit" value="PREDICT">
+
+<a href="/prediction/yieldprediction">
+  <input type="button" value="REFRESH" />
+</a>
+ 
+
+</form>
+</body>
+</html>
+
+{% else %}
+
+<head>
+  <meta http-equiv="refresh" content="1; URL=/accounts/login" />
+</head>
+<body>
+  <p>If you are not redirected in three seconds, <a href="/accounts/login">click here</a>.</p>
+</body>
+
+
+
+{% endif %}

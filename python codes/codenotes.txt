@@ -1,0 +1,37 @@
+
+
+import joblib
+import numpy as np
+
+filename='finalized_cropmodel.sav'
+joblib.dump(pipeline,filename)
+
+
+cls=joblib.load('finalized_cropmodel.sav')
+lis=np.array([[1,1,1,1,1,1,1]],dtype=np.float64)
+print(type(lis[0]))
+ans=cls.predict(lis)
+print(ans)
+
+-------------for creating an environment----(run)-----------------------------------------------------------
+python -m venv env
+
+-------------for installing libraries----------------------------------------------------------
+
+pip install -r requirements.txt  
+-------------for saving libraries-----------------------------------------------------
+pip freeze > requirements.txt
+
+-----------------------------------------------------------------------
+
+
+
+filename='finalized_yieldmodel.sav'
+joblib.dump(pipeline,filename)
+
+
+cls=joblib.load('finalized_yieldmodel.sav')
+lis=np.array([["Andaman and Nicobar Islands","NICOBARS","Kharif     ","Arecanut",None,None]])
+print(type(lis[0]))
+ans=cls.predict(lis)
+print('Answer=  ',ans)

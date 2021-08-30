@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>HOME</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href='{% static 'styles/home.css' %}?{% now "U" %}'>
+</head>
+<body>
+   <div id="heading">
+      <div id="text">
+         <h2>Welcome Aboard!!!</h2>
+         <div id="messages">
+         {% for message in messages %}
+         <h2>{{message}}</h2>
+         {% endfor %}
+         </div>
+         <h3>Recommending crops for Agriculture made hassle-free....</h3>
+         <h4>Here we provide instant crop recommendations for your agricultural lands...</h4>
+         <p><a href="/accounts/login">Login</a> / <a href="/accounts/register">Register</a> to continue.</p>
+      </div>
+   </div>
+   <div id="navbar">
+      <img class="logo" src="../static/images/imag.png">
+      {% if user.is_authenticated %}
+      <a href="/prediction/yieldprediction">Yield Predictor</a>
+      <a href="/prediction/cropprediction">Crop Predictor</a>
+      <a href="/accounts/logout">LOGOUT</a>
+      {% else %}
+      <a href="/accounts/login">LOGIN</a>
+      <a href="/accounts/register">REGISTER</a>
+      {% endif %}
+      <a href="/about">About/Feedback</a>
+
+      
+   </div>
+   <div class="crop_container"> 
+      
+      <h2>Crop Predictor</h2>
+      <img src="static/images/R.png">
+      <p>Here you can predict the crop that is best suited for your land...
+         given you provide the nutrients present in the soil such as Nitrogen, Phosphorous,
+         Potassium, pH, humidity and the rainfall of the concerned area...
+      </p>
+      <button class="Btn"><a href="/prediction/cropprediction">Go to Crop Predictor</a></button>
+   </div>
+   <div class="yield_container">
+      
+      <h2>Yield Predictor</h2>
+      <img src="static/images/green-upward-trend-arrow.png">
+      <p>Here you can predict the yield of your land by providing certain features such as 
+         Name of the state, District, Crop. By using Machine learning, Our model predicts and provides
+         the yield of your land per square metre.....
+      </p>
+      <button class="Btn"><a href="/prediction/yieldprediction">Go to Yield Predictor</a></button>
+   </div>
+   
+    
+</body>
+</html>

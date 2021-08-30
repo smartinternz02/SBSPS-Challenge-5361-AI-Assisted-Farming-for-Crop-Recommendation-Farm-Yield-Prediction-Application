@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | REGISTER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href='{% static 'styles/register.css' %}?{% now "U" %}'>
+    <div id="navbar">
+      <a href="/">HOME</a>
+      <a href="/accounts/login">LOGIN</a>
+   </div>
+</head>
+<body>
+    <h1>Register your account here......</h1>
+    <form id="register" method="post" class="registerform"> 
+        {% csrf_token %}
+        <label >First Name:</label><br>
+        <input type="text" name="name" id="name" placeholder="Enter Your Name" class="reg">
+        <br>
+        <label >Username:</label><br>
+        <input type="text" name="username" id="username" placeholder="Enter a Username">
+        <br>
+        <label >E-mail:</label><br>
+        <input type="email" name="email" id="email" placeholder="Enter Your valid E-mail id">
+        <br>
+        <label >Mobile Number:</label><br>
+        <input type="tel" name="number" id="number" placeholder="Enter Your Mobile Number">
+        <br>
+        <label >Password:</label><br>
+        <input type="password" name="password" id="password" placeholder="Enter a Password">
+        <br>
+        <input type="submit" value="Create my account" name="submit" id="submit">
+    </form>
+    
+</body>
+</html>

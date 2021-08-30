@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"  href="{% static 'styles/about.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>ABOUT US</title>
+</head>
+<body>
+    <div id="navbar">
+        <a href="/">HOME</a>
+        {% if user.is_authenticated %}
+      <a href="/prediction/yieldprediction">Yield Predictor</a>
+      <a href="/prediction/cropprediction">Crop Predictor</a>
+      <a href="/accounts/logout">LOGOUT</a>
+      {% else %}
+      <a href="/accounts/login">LOGIN</a>
+      <a href="/accounts/register">REGISTER</a>
+      {% endif %}
+    </div>
+    <div id="main"> 
+     <div id="feedback"> 
+
+        <form id="feeback" method="post" class="feedbackform">{% csrf_token %}
+            <label >Feedback</label><br>
+            <textarea rows="5" cols="60" name="text" id="text" placeholder="Enter your feedback here..."></textarea>
+           
+            
+            <input type="submit" value="Submit" name="submit" id="submit">
+        </form>
+     </div>
+     <div id="contact">
+        <div id="phone">
+            <img src="{% static 'images/phone.png'%}" >
+            <h3><bold>Contact us</bold></h3>
+            <h4>98765 43210</h4>
+            <h4>98765 43210</h4>
+        </div>
+        <div id="mail">
+            <img src="{% static 'images/mail.png'%}">
+            <h3><bold>Mail us</bold></h3>
+            <h4>gunasekar@gmail.com</h4>
+            <h4>gunasekar@gmail.com</h4>
+        </div>
+        <div id="address">
+            <img src="{% static 'images/address.png'%}">
+            <h3><bold>Address</bold></h3>
+            <h4>No.20, Park Avenue, Gandhinagar, Chennai-600 008</h4>
+        </div>
+        <div id="team">
+            <img src="{% static 'images/team2.png'%}">
+            <h3><bold>Our team</bold></h3>
+            <h4>Venkata Gunasekar V</h4>
+            <h4>Tamil Mani P</h4>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
