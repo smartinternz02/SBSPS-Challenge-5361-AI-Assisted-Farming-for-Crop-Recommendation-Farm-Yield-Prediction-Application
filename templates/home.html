@@ -15,7 +15,7 @@
 <body>
    <div id="heading">
       <div id="text">
-         <h2>Welcome Aboard!!!</h2>
+         <h2>Welcome {{user.first_name}}!!!</h2>
          <div id="messages">
          {% for message in messages %}
          <h2>{{message}}</h2>
