@@ -57,7 +57,8 @@ Machine Learning can predict future weather patterns at the local level and iden
 ## Project Links
 - [Github](https://github.com/smartinternz02/SBSPS-Challenge-5361-AI-Assisted-Farming-for-Crop-Recommendation-Farm-Yield-Prediction-Application)
 - [Video Demonstration](https://drive.google.com/file/d/1DOcjk7dwhFX1uXUxwQbsmTjE_zJw7z1h/view?usp=sharing)
-- [Presentation](https://docs.google.com/presentation/d/1gcCXJCXY1d6lALK0ZjNQ9dAZhQAxdxWN/edit?usp=sharing&ouid=100801092551792705034&rtpof=true&sd=true)
+- [Report](https://drive.google.com/file/d/1DOcjk7dwhFX1uXUxwQbsmTjE_zJw7z1h/view?usp=sharing)
+- [Presentation](https://github.com/smartinternz02/SBSPS-Challenge-5361-AI-Assisted-Farming-for-Crop-Recommendation-Farm-Yield-Prediction-Application/blob/main/reports/ppt%20presentation/AI%20Assisted%20Farming%20for%20Crop%20Recommendation%20Farm%20Yield%20Prediction%20Application.pptx.pdf)
 - [Screen Shots](https://github.com/smartinternz02/SBSPS-Challenge-5361-AI-Assisted-Farming-for-Crop-Recommendation-Farm-Yield-Prediction-Application/tree/main/reports/screen%20shots)
 - [Drive Link](https://drive.google.com/drive/folders/17NnI1mDtg06x5paGCJ7IuG7l8b5_Jkoh?usp=sharing)
 
